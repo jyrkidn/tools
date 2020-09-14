@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Livewire\JsonTool;
+use App\Http\Livewire\UnserializeTool;
+use App\Http\Livewire\XmlTool;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('static.home');
 });
+
+Route::get('/tools/json', JsonTool::class)
+    ->name('tools.json');
+
+Route::get('/tools/xml', XmlTool::class)
+    ->name('tools.xml');
+
+Route::get('/tools/unserialize', UnserializeTool::class)
+    ->name('tools.unserialize');
