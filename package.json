@@ -22,7 +22,6 @@
     "dependencies": {
         "alpinejs": "^2.7.0",
         "codemirror": "^5.57.0",
-        "monaco-editor": "^0.20.0",
         "monaco-editor-webpack-plugin": "^1.9.0"
     }
 }
