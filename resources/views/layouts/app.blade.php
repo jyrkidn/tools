@@ -9,8 +9,15 @@
     @livewireStyles
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
-<body>
-    {{ $slot }}
+<body class="bg-gradient-to-r from-purple-700 to-purple-900">
+    <div class="flex flex-col h-screen relative">
+        {{ $slot }}
+
+        <footer class="w-full flex-1 text-center p-4 bottom-0 text-yellow-500">
+            Copyright @jyrkidn
+        </footer>
+    </div>
+
     @livewireScripts
 
     <script src="{{ mix('/js/app.js') }}"></script>

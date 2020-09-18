@@ -35,7 +35,7 @@ class Tool extends Component
                 'language' => $this->converts[$convertClass]::mode()
             ]);
         } catch (Throwable $e) {
-            $this->error = $e->getMessage();
+            $this->error = html_entity_decode($e->getMessage());
             $this->dispatchBrowserEvent('value-beautified', [
                 'beautified' => '',
                 'language' => $this->converts[$convertClass]::mode()

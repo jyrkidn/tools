@@ -1,6 +1,7 @@
 const mix = require('laravel-mix')
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 const path = require('path')
+const tailwindcss = require('tailwindcss')
 
 /*
  |--------------------------------------------------------------------------
@@ -15,4 +16,7 @@ const path = require('path')
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/css/app.scss', 'public/css')
-
+    .options({
+        processCssUrls: false,
+        postCss: [ tailwindcss('./tailwind.config.js') ],
+    })

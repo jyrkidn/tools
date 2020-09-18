@@ -1,1 +1,68 @@
 @import "codemirror";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 1024px) {
+  .lg\:h-90 {
+    height: 90%;
+  }
+}
+
+.CodeMirror {
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+.CodeMirror {
+  @apply bg-yellow-500 text-purple-800;
+}
+
+div.CodeMirror-selected {
+  @apply bg-purple-800;
+}
+
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection {
+  @apply bg-purple-800;
+}
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection {
+  @apply bg-purple-800;
+}
+.CodeMirror-gutters {
+  @apply bg-yellow-600;
+  border-right: 0px;
+}
+.CodeMirror-guttermarker {
+  color: black;
+}
+.CodeMirror-linenumber {
+  @apply text-purple-800;
+}
+.CodeMirror-cursor {
+  @apply border-l border-purple-900;
+}
+
+span.cm-comment { color: #e96ba8; }
+span.cm-atom { color: #815ba4; }
+span.cm-number { color: #815ba4; }
+
+span.cm-property, span.cm-attribute { color: #48b685; }
+span.cm-keyword { color: #ef6155; }
+span.cm-string { color: #fec418; }
+
+span.cm-variable { color: #48b685; }
+span.cm-variable-2 { color: #06b6ef; }
+span.cm-def { color: #f99b15; }
+span.cm-bracket { color: #41323f; }
+span.cm-tag { color: #ef6155; }
+span.cm-link { color: #815ba4; }
+span.cm-error { background: #ef6155; color: #776e71; }
+
+.CodeMirror-activeline-background {
+  @apply bg-yellow-700;
+}
+.CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
