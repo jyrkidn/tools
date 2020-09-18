@@ -7,9 +7,12 @@
     <title>Tools</title>
 
     @livewireStyles
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body>
     {{ $slot }}
     @livewireScripts
+
+    <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>
