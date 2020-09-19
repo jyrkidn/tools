@@ -7,7 +7,13 @@ module.exports = {
     './resources/views/**/*.blade.php'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'dark-purple': '#2d2b57',
+        'light-purple': '#e3dfff',
+        'text-yellow': '#f8d000'
+      }
+    }
   },
   variants: {},
   plugins: [],

@@ -1,4 +1,4 @@
-<div class="flex flex-col m-4 lg:h-90">
+<div class="flex flex-col m-4 lg:h-90 h-full">
     @if ($error)
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 relative mb-4" role="alert">
             <span class="block sm:inline">
@@ -13,14 +13,14 @@
             wire:model.lazy="minified"
             cols="30"
             rows="10"
-            class="bg-yellow-500 focus:outline-none focus:shadow-outline border text-purple-800 block w-full lg:w-5/12 appearance-none leading-normal"
+            class="flex-grow bg-dark-purple focus:outline-none text-text-yellow block w-full lg:w-5/12 appearance-none leading-normal"
         ></textarea>
 
-        <div class="flex justify-center flex-col w-full lg:w-2/12 lg:px-2">
+        <div class="flex-grow-0 flex justify-center flex-col w-full lg:w-2/12 lg:px-2">
             @foreach ($converts as $key => $convert)
                 <button
                     type="button"
-                    class="bg-yellow-500 hover:bg-yellow-600 text-purple-800 font-bold py-2 px-4 my-2 inline-flex items-center justify-center"
+                    class="bg-dark-purple hover:text-light-purple text-text-yellow font-bold py-2 px-4 my-2 inline-flex items-center justify-center"
                     wire:click="convert('{{ $key }}')"
                 >
                     <span>{{ $convert::name() }}</span>
@@ -29,12 +29,8 @@
             @endforeach
         </div>
 
-        <div class="bg-white focus:outline-none focus:shadow-outline block w-full lg:w-5/12 appearance-none leading-normal">
-            <textarea
-                id="editor"
-                cols="30"
-                rows="10"
-            ></textarea>
+        <div class="flex-grow hljs focus:outline-none w-full lg:w-5/12">
+            <pre><code class="{{ $language }}">{!! $beautified !!}</code></pre>
         </div>
     </div>
 </div>

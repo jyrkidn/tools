@@ -6,7 +6,7 @@ use DOMDocument;
 
 class Xml extends Convert
 {
-    public const MODE = 'application/xml';
+    public const MODE = 'xml';
 
     public function beautify(): string
     {

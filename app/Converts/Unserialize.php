@@ -6,7 +6,7 @@ use DOMDocument;
 
 class Unserialize extends Convert
 {
-    public const MODE = 'application/json';
+    public const MODE = 'json';
 
     public function beautify(): string
     {

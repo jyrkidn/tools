@@ -7,11 +7,15 @@ use App\Converts\Json;
 use App\Converts\Unserialize;
 use Livewire\Component;
 use Throwable;
+use Highlight\Highlighter;
+use Illuminate\Support\HtmlString;
 
 class Tool extends Component
 {
     public string $minified = '';
     public string $error = '';
+    public string $beautified = '';
+    public string $language = 'json';
 
     public array $converts = [
         'xml' => Xml::class,
@@ -29,17 +33,16 @@ class Tool extends Component
     {
         $this->error = '';
 
+        $this->language = $this->converts[$convertClass]::mode();
         try {
-            $this->dispatchBrowserEvent('value-beautified', [
-                'beautified' => $this->converts[$convertClass]::new($this->minified)->beautify(),
-                'language' => $this->converts[$convertClass]::mode()
-            ]);
+            $hl = new \Highlight\Highlighter();
+            $this->beautified = $hl->highlight(
+                $this->language,
+                $this->converts[$convertClass]::new($this->minified)->beautify()
+            )->value;
         } catch (Throwable $e) {
             $this->error = html_entity_decode($e->getMessage());
-            $this->dispatchBrowserEvent('value-beautified', [
-                'beautified' => '',
-                'language' => $this->converts[$convertClass]::mode()
-            ]);
+            $this->beautified = '';
         }
     }
 }
