@@ -9,7 +9,7 @@
     @livewireStyles
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
-<body class="bg-gradient-to-r from-yellow-400 to-yellow-600">
+<body class="bg-gradient-to-r from-yellow-300 to-yellow-600">
     <div class="flex flex-col h-screen relative">
         {{ $slot }}
 

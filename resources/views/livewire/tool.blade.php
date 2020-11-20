@@ -9,8 +9,10 @@
 
     <div class="flex flex-col lg:flex-row h-full">
 
+        <label for="minified" class="sr-only">Minified</label>
         <textarea
             wire:model.lazy="minified"
+            id="minified"
             cols="30"
             rows="10"
             class="flex-grow bg-dark-purple focus:outline-none text-text-yellow block w-full lg:w-5/12 appearance-none leading-normal"
